@@ -16,11 +16,11 @@ jobs:
       - python/test:
     pytest: true
       - run:
-    command: |
-      flake8 --exclude=venv*, __init__.py --statistics
-    name: Inspect PEP8 (flake8)
+        command: |
+          flake8 --exclude=venv*, __init__.py --statistics
+        name: Inspect PEP8 (flake8)
 
   workflows:
     main:
-    jobs:
-    - build_and_test
+      jobs:
+        - build_and_test
