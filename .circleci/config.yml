@@ -14,13 +14,14 @@ jobs:
       - python/save-cache
       - python/dist
       - python/test:
-    pytest: true
+          pytest: true
       - run:
-        command: |
-          flake8 --exclude=venv*, __init__.py --statistics
-        name: Inspect PEP8 (flake8)
+          name: run tests
+          command: |
+            flake8 --exclude=venv*, __init__.py --statistics
+            name: Inspect PEP8 (flake8)
 
-  workflows:
-    main:
-      jobs:
-        - build_and_test
+workflows:
+  main:
+    jobs:
+      - build_and_test
